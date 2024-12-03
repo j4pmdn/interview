@@ -1,0 +1,133 @@
+============Interview Java========
+1. Phân biệt JDK, JRE, JVM
+	JVM (Java Virtual Machine): Là máy ảo thực thi mã bytecode Java, chuyển đổi thành mã máy. Quản lý bộ nhớ (Garbage Collection) và xử lý lỗi.
+	JRE: Bao gồm JVM và các thư viện, công cụ cần thiết để chạy chương trình Java, Chỉ dùng để chạy ứng dụng, không hỗ trợ phát triển.
+	JDK (Java Development Kit):
+		Là bộ công cụ phát triển Java, gồm JRE, JVM, và các công cụ như trình biên dịch (javac).
+		Sử dụng để viết, biên dịch và chạy ứng dụng Java.
+	Tóm lại:
+		JVM: Chạy mã bytecode.
+		JRE: Chạy ứng dụng Java.
+		JDK: Phát triển và chạy ứng dụng Java.
+		
+2. Tại sao Java write once run anywhere
+	Java đạt được write once run anywhere nhờ bytecode độc lập nền tảng và sự tương thích của JVM trên các hệ điều hành khác nhau
+	
+3. Có bao nhiêu loại KDL trong Java
+Có 2 loại chính
+	1. Kiểu dữ liệu nguyên thủy (Primitive Data Types)
+		Được định nghĩa sẵn trong ngôn ngữ, không phải đối tượng.
+		Lưu trữ giá trị trực tiếp trong bộ nhớ.
+	2.  Kiểu dữ liệu tham chiếu (Reference Data Types)
+		Tham chiếu đến các đối tượng hoặc mảng.
+		Không lưu trữ giá trị trực tiếp, chỉ lưu địa chỉ ô nhớ của đối tượng.	
+	Tóm tắt:
+	Kiểu nguyên thủy (8 loại): byte, short, int, long, float, double, char, boolean.
+	Kiểu tham chiếu: Bao gồm đối tượng, mảng, và interface.
+	Java chủ yếu sử dụng kiểu tham chiếu cho các cấu trúc dữ liệu phức tạp và kiểu nguyên thủy cho các giá trị đơn giản.		
+	
+4. Cách thức quản lý, lưu trữ, khởi tạo KDL nguyên thủy và đối tượng - Phân biệt
+	1. Kiểu dữ liệu nguyên thủy (Primitive Data Types)
+		Được lưu trực tiếp trong stack memory.
+		Giá trị của biến là giá trị thực (direct value), không phải tham chiếu.
+			Khởi tạo:
+			Cú pháp đơn giản, chỉ cần khai báo và gán giá trị:
+			int x = 10; // Giá trị 10 được lưu trực tiếp trong stack
+			Quản lý:
+			Không có cơ chế Garbage Collection vì không liên quan đến heap memory.
+			Bộ nhớ được tự động giải phóng khi biến ra khỏi phạm vi (scope).
+			Hiệu năng:
+			Hiệu quả hơn kiểu đối tượng do lưu trữ trong stack và không cần xử lý tham chiếu.
+			
+	2. Kiểu đối tượng (Reference Data Types)
+		Địa chỉ tham chiếu được lưu trong stack memory, nhưng dữ liệu thực tế được lưu trong heap memory.
+		Một biến tham chiếu chỉ trỏ đến một đối tượng trong heap.
+			Khởi tạo:
+			Cần sử dụng từ khóa new để tạo đối tượng:
+			String str = new String("Hello"); // Đối tượng "Hello" lưu trong heap, địa chỉ lưu trong stack
+			Quản lý:
+			Sử dụng Garbage Collection để giải phóng bộ nhớ khi đối tượng không còn được tham chiếu.
+			Việc quản lý bộ nhớ phức tạp hơn vì phải theo dõi các đối tượng trên heap.
+			Hiệu năng:
+			Chậm hơn kiểu nguyên thủy vì phải truy cập gián tiếp qua địa chỉ tham chiếu. 		
+		Lưu ý thêm:
+			Autoboxing/Unboxing: Java hỗ trợ chuyển đổi giữa kiểu nguyên thủy và kiểu đối tượng tương ứng (int ↔ Integer).
+			Nên sử dụng kiểu nguyên thủy nếu không cần tính năng đối tượng để tối ưu hiệu năng và bộ nhớ.	
+
+5. Enum là gì, khi nào thì sử dụng enum
+	Enum(Enumeration) là một KDL đặc biệt dùng để định nghĩa một tập hợp các hằng số cố định, không thay đổi. Giúp mã nguồn rõ ràng, an toàn kiểu 
+	và dễ bảo trì
+	Khi nào sử dụng enum
+	 --> 1. Tập hợp giá trị cố định -> các ngày trong tuần, trạng thái đơn hàng, loại tài khoản...
+	 --> 2. Cải thiện tính độc lập và dễ bảo trì -> thay thế hằng số rời rạc bằng các giá trị có tên rõ ràng
+	 --> 3. Tránh lỗi logic -> đảm bảo chỉ các giá trị hợp lệ được sử dụng
+	 --> 4. Hỗ trợ các phương thức -> cho phép mở rộng với constructor, thuộc tính, phương thức
+	 
+6. Mục đích của khai báo final cho biến trong java
+	Khi khai báo một biến với từ khóa final, mục đích là đảm bảo giá trị của biến đó không thể thay đổi sau khi được khởi tạo.
+	--> 1. Đối với biến nguyên thủy (primitive):
+		 -> Giá trị của biến không thể thay đổi.
+	--> 2. Đối với biến tham chiếu (reference):
+		 -> Biến tham chiếu không thể trỏ đến đối tượng khác, nhưng trạng thái của đối tượng mà nó tham chiếu có thể thay đổi.
+	--> 3. Dùng với hằng số
+		 -> Thường kết hợp với static để khai báo hằng số bất biến (constant).
+	--> 4. Tăng tính an toàn
+		 -> Ngăn chặn vô tình thay đổi giá trị biến, giúp code ổn định và dễ bảo trì	 
+	-- > final giúp đảm bảo giá trị bất biến, tăng tính an toàn và rõ ràng trong lập trình.	 
+
+7. Những vị trí có thể đặt từ khóa final	
+	final có thể được sử dụng với:
+	Biến (cục bộ, thành viên[toàn cục], hoặc tĩnh).
+	Phương thức. -> Một phương thức final không thể bị ghi đè (override) bởi các lớp con.
+	Lớp. -> Một lớp final không thể được kế thừa.
+	Tham số của phương thức. -> Khi tham số được khai báo là final, giá trị của nó không thể thay đổi bên trong phương thức.
+	
+8. Mục đích và ý nghĩa của từ khóa static trong Java
+	static là một từ khóa trong Java được sử dụng để định nghĩa các thành phần (biến, phương thức, khối mã, lớp lồng nhau) thuộc về lớp (class) 
+	thay vì thuộc về các đối tượng (instance).
+	
+	Biến tĩnh (static variable):
+		Dùng chung cho tất cả các đối tượng, chỉ có một bản sao duy nhất trong bộ nhớ.
+		Ví dụ: Đếm số lượng đối tượng được tạo.
+	
+	Phương thức tĩnh (static method):
+		Gọi trực tiếp từ lớp mà không cần tạo đối tượng.
+		Ví dụ: Hàm tiện ích như Math.sqrt().
+	
+	Khối tĩnh (static block):
+		Dùng để khởi tạo dữ liệu tĩnh, chạy một lần khi lớp được nạp.
+		Ví dụ: Khởi tạo cấu hình hệ thống.
+	
+	Lớp lồng nhau tĩnh (static nested class):
+		Có thể truy cập mà không cần tạo đối tượng của lớp bên ngoài.
+		Ví dụ: Lớp phụ trợ không phụ thuộc vào lớp cha.
+	
+	Tóm lại:
+	static dùng để chia sẻ tài nguyên, giảm bộ nhớ, và giúp truy cập trực tiếp từ lớp thay vì qua đối tượng.
+
+9. Có thể khai báo private constructor không? vì sao
+	Có, Java cho phép khai báo constructor là private.
+	
+	Vì ngăn chặn việc tạo đối tượng từ bên ngoài lớp:
+	 -> Khi constructor là private, không thể tạo đối tượng của lớp từ bên ngoài.
+	 -> Thường dùng trong các trường hợp sau:
+	 -> Lớp tiện ích (utility class): Chứa toàn bộ phương thức static, không cần tạo đối tượng.
+	 -> Singleton pattern: Đảm bảo chỉ có duy nhất một đối tượng của lớp.
+	 
+10. Phân biệt Class và Object trong Java
+	Class: 
+	 -> Là bản thiết kế hoặc khuôn mẫu.
+	 -> Là định nghĩa logic, không chiếm dụng bộ nhớ.
+	 -> Xác định thuộc tính (fields) và hành vi (methods).
+	 -> Được định nghĩa bằng từ khóa class.
+	Object: 
+	 -> Là một thực thể cụ thể được tạo từ class, có dữ liệu và hành vi riêng.
+	 -> Là thực thể vật lý, chiếm bộ nhớ khi được tạo.
+	 -> Lưu trữ giá trị cụ thể của thuộc tính và thực hiện hành vi.
+	 -> Được tạo bằng từ khóa new.
+
+
+	
+
+	 
+	
