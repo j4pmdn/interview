@@ -1,0 +1,14 @@
+======c-sharp==========
+Trong C#, namespace được sử dụng để tổ chức và nhóm các class, iterface, cấu trúc, enum và delegate lại với nhau, giúp tránh xung đột tên khi 
+làm việc với các dự án lớn hoặc tích hợp thư viện bên ngoài.
+
+internal -> truy cập bất cứ trong project
+
+Kiểu dữ liệu trong .Net
+Có 2 loại KDL gồm value types và reference types
+ -> value types: khi khai báo 1 biến thì bản thân nó sẽ chứa luôn KDL, ko cần new để cấp phát vùng nhớ
+ -> reference types: khi khai báo 1 biến thì biến đó chỉ là 1 tham chiếu đến đối tượng -> nếu muốn dùng thì phải dùng toán tử new để cấp phát
+ 
+KDL object
+ string -> immutable -> ko thể thay đổi chuỗi ban đầu -> nếu muốn thay đổi chuỗi thì dùng StringBuilder tối ưu hiệu năng hơn string gán chuỗi	
+ dynamic -> chỉ kiểm tra khi chạy chương trình(runtime), ko kiểm tra ở biên dịch
