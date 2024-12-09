@@ -12,3 +12,24 @@ Có 2 loại KDL gồm value types và reference types
 KDL object
  string -> immutable -> ko thể thay đổi chuỗi ban đầu -> nếu muốn thay đổi chuỗi thì dùng StringBuilder tối ưu hiệu năng hơn string gán chuỗi	
  dynamic -> chỉ kiểm tra khi chạy chương trình(runtime), ko kiểm tra ở biên dịch
+
+
+.NET Collection
+	Collection cho phép chứa nhiều object bên trong.
+	Khác với array, collection cho phép thêm/bớt các thành phần.
+	List, LinkedList dùng để chứa một danh sách.
+	Dictionary chứa dữ liệu theo kiểu key/value.
+	Queue và Stack cung cấp thêm các hàm để làm việc với cấu trúc dữ liệu hàng đợi hoặc ngăn xếp.
+	
+Lambda trong C#
+	Biểu thức lambda là biểu thức sử dụng toán tử lambda
+	Nếu chỉ có một tham số thì ta có thể bỏ cặp dấu ngoặc tròn ()
+	Expression lambda có kiểu Func
+	Statement lambda có kiểu Action
+
+Lambda cho phép ta truyền các biếu thức cho các hàm, lưu lại trong có biến... giúp viết code mềm dẻo và gọn gàng hơn, 
+lambda được dùng nhiều với LINQ hoặc Entity Framework
+
+LINQ - Language Integrated Query là một tập các công nghệ trên .NET cho phép viết trực tiếp các câu truy vấn ngay trong mã nguồn chương trình.
+Ưu điểm của LINQ là cho phép viết lệnh truy vấn ngắn gọn, dễ dàng, sử dụng cùng một cú pháp cho tất cả các dạng nguồn dữ liệu khác nhau, 
+	có thể phát hiện lỗi ngay khi biên dịch hoặc lỗi khi cấu trúc nguồn dữ liệu thay đổi.
