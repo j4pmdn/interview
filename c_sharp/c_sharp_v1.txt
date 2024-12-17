@@ -33,3 +33,8 @@ lambda được dùng nhiều với LINQ hoặc Entity Framework
 LINQ - Language Integrated Query là một tập các công nghệ trên .NET cho phép viết trực tiếp các câu truy vấn ngay trong mã nguồn chương trình.
 Ưu điểm của LINQ là cho phép viết lệnh truy vấn ngắn gọn, dễ dàng, sử dụng cùng một cú pháp cho tất cả các dạng nguồn dữ liệu khác nhau, 
 	có thể phát hiện lỗi ngay khi biên dịch hoặc lỗi khi cấu trúc nguồn dữ liệu thay đổi.
+	
+Đa hình
+ Dùng từ khóa virtual để cho phép một hàm có thể được override lại trong lớp thừa kế.
+ Dùng từ khóa override khi bạn muốn nạp chồng một phương thức, nếu thiếu từ khóa này, method của bạn sẽ là một method mới và không được tự động gọi nếu bạn gọi thông qua một biến thuộc lớp cha.
+ Dùng từ khóa sealed nếu không muốn các lớp con override.		
