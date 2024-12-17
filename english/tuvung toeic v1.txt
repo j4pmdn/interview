@@ -129,4 +129,13 @@ vừa cho tính từ gốc	==> ưu tiên chọn tính từ gốc
 delays = put off = postpone: trì hoãn			   
 
 proceed(n): tiền thu được từ...
+procedure(n) = process(n): quy trình
+procedural(adj): thuộc về quy trình
 
+As + SV: Khi = When
+As + SV = Because = Given that = Now that = Since =  in that + SV = bởi vì
+
+refrain(v): kiềm chế
+limit(v): giới hạn
+follow(v): tuân thủ = obey = abide by
+unfold(v): mở ra
