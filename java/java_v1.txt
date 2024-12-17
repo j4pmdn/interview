@@ -1,0 +1,27 @@
+1. Java là ngôn ngữ lập trình bậc cao, hướng đối tượng, bảo mật mạnh mẽ -> Platform
+	--> Write once, run anywhere
+Tính năng: 
+  -> OOP, nền tảng độc lập, bảo mật, kiến trúc - trung lập, Portable, mạnh mẽ, đa luồng, thông dịch, hiệu năng cao, phân tán
+  
+2. JDK, JRE, JVM
+ -> JVM: Java Virtual Machine 1 thiết bị ảo có thể giúp máy tính chạy chương trình Java -> cung cấp môi trường Runtime trong đó Java Bytecode được thực thi
+ -> JRE: Java Runtime Environment -> Bao gồm JVM + tập thư viện và file khác mà JVM sử dụng tại runtimes
+ -> JDK: Java Development Kit -> bao gồm JRE và các Development tool
+ 
+3. Biến trong Java: có 3 kiểu biến trong java, bao gồm biến local, biến instance(toàn cục) và biến static
+  -> Quy tắc đặt tên biến
+	+ Chỉ được bắt đầu bằng một ký tự(chữ), hoặc một dấu gạch dưới(_), hoặc một ký tự dollar($)
+	+ Tên biến không được chứa khoảng trắng
+	+ Bắt đầu từ ký tự thứ hai, có thể dùng ký tự(chữ), dấu gạch dưới(_), hoặc ký tự dollar($)
+	+ Không được trùng với các từ khóa
+	+ Có phân biệt chữ hoa và chữ thường
+	
+ -> Biến local trong Java
+   --> Biến local được khai báo trong các phương thức, hàm constructor hoặc các block
+   --> Biến local được khai báo trong các phương thức, hàm constructor hoặc các block thì sẽ bị phá hủy khi kết thúc các method, constructor, block
+   --> không được sử dụng access modifier khi khai báo biến local
+   --> các biến local được lưu trong vùng nhớ stack của memory
+   --> Cần khởi tạo giá trị mặc định cho biến local trước khi có thể sử dụng
+	 
+ 
+	
