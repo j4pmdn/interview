@@ -1,0 +1,19 @@
+stack và heap là hai khu vực bộ nhớ khác nhau và cách sử dụng và quản lý khác nhau
+
+stack: 
+ + quản lý bộ nhớ theo kiểu LIFO(Last In First Out)
+ + stack chủ yếu lưu trữ các biến cục bộ và các tham số của phương thức
+ + giá trị của biến KDL nguyên thủy lưu ở stack
+ + stack chỉ tồn tại trong thời gian thực thi của method. method done -> stack được giải phóng và các biến sẽ bị hủy
+ + tốc độ truy cập stack nhanh hơn heap vì quản lý bộ nhớ đơn giản và ko cần gom rác(garbage collection)
+
+heap:
+ + quản lý bộ nhớ động, ko có thứ tự cụ thể như stack
+ + bộ thu gom rác(garbage collection) chịu trách nhiệm quản lý và giải phóng bộ nhớ trong heap
+ + lưu trữ các đối tượng và dữ liệu đc tạo ra bằng từ khóa new
+ + các đối tượng trong heap tồn tại trong suốt thời gian chạy của ứng dụng hoặc cho đến khi ko còn tham chiếu nào trỏ đến chúng và chúng được thu gom rác
+ + truy cập bộ nhớ trong heap chậm hơn stack vì quản lý bộ nhớ phức tạp và cần thu gom rác
+
+
+ 
+
