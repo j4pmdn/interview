@@ -1,19 +1,94 @@
-stack và heap là hai khu vực bộ nhớ khác nhau và cách sử dụng và quản lý khác nhau
+1. stack và heap là hai khu vực bộ nhớ khác nhau và cách sử dụng và quản lý khác nhau
 
 stack: 
  + quản lý bộ nhớ theo kiểu LIFO(Last In First Out)
  + stack chủ yếu lưu trữ các biến cục bộ và các tham số của phương thức
  + giá trị của biến KDL nguyên thủy lưu ở stack
- + stack chỉ tồn tại trong thời gian thực thi của method. method done -> stack được giải phóng và các biến sẽ bị hủy
+ + stack chỉ tồn tại trong thời gian thực thi của method. method done -> stack được giải phóng 
+   và các biến sẽ bị hủy
  + tốc độ truy cập stack nhanh hơn heap vì quản lý bộ nhớ đơn giản và ko cần gom rác(garbage collection)
 
 heap:
  + quản lý bộ nhớ động, ko có thứ tự cụ thể như stack
  + bộ thu gom rác(garbage collection) chịu trách nhiệm quản lý và giải phóng bộ nhớ trong heap
  + lưu trữ các đối tượng và dữ liệu đc tạo ra bằng từ khóa new
- + các đối tượng trong heap tồn tại trong suốt thời gian chạy của ứng dụng hoặc cho đến khi ko còn tham chiếu nào trỏ đến chúng và chúng được thu gom rác
+ + các đối tượng trong heap tồn tại trong suốt thời gian chạy của ứng dụng hoặc cho đến khi ko còn tham chiếu nào 
+   trỏ đến chúng và chúng được thu gom rác
  + truy cập bộ nhớ trong heap chậm hơn stack vì quản lý bộ nhớ phức tạp và cần thu gom rác
 
-
+2. sự khác nhau giữa abstract interface
+abstract class và interface đều là khái niệm dung để định nghĩa các KDL trừu tượng
  
+- abstract class
+  + là lớp chứa các phương thức trừu tượng và các phương thức đã được cài đặt
+  + có thể có các thuộc tính (field)
+  + có thể có constructor
+  + Một lớp chỉ có thể kế thừa từ 1 lớp abstract duy nhất vì Java ko hỗ trợ đa kế thừa
+  + phạm vi truy cập có thể là public, protected, private
+
+- Interface 
+  + là 1 tập hợp các phương thức trừu tượng. Trước Java8 -> tất cả các phương thức trong interface đều là PT trừu tượng
+    Tuy nhiên từ Java8 trở đi, interface có thể chứa các phương thức mặc định(default method) và static method
+  + ko có thuộc tính, chỉ có các hằng số (public static final)
+  + ko có constructor -> ko thể tạo đối tượng từ interface trực tiếp -> muốn tạo thì implements
+  + 1 class có thể implement nhiều interface -> hỗ trợ đa kế thừa trong Java
+  + Các phương thức trong interface mặc định phải là public
+
+ Sử dụng khi:
+Abstract Class: sử dụng khi muốn chia sẻ một số cài đặt(code) chung cho các lớp con và đồng thời yêu cầu các lớp con
+		thực hiện các phương thức trừu tượng
+Interface: Sử dung khi muốn định nghĩa 1 hợp đồng(contract) mà lớp thực thi phải tuân theo, và muốn 1 lớp có thể
+	   kế thừa nhiều hợp đồng
+
+3. Từ khóa static trong Java
+Trong Java, Từ khóa static trong Java được sử dụng chính để quản lý bộ nhớ. Chúng ta có thể áp dụng từ khóa static 
+với các biến, các phương thức, các khối, các lớp lồng nhau(nested class). Từ khóa static thuộc về lớp 
+chứ không thuộc về instance(thể hiện) của lớp.
+
+4. class và object
+- Class 
+ + là bản thiết kế, khuôn mẫu cho đối tượng
+ + class không thể tồn tại độc lập, cần phải có đối tượng.
+ + class có định nghĩa các thuộc tính và phương thức.
+ + class xác định hành vi (phương thức) của đối tượng.
+
+- Object
+ + Đối tượng là một thể hiện (instance) của lớp.
+ + Đối tượng được tạo ra từ lớp.
+ + Đối tượng có các giá trị cụ thể cho các thuộc tính.
+ + Đối tượng thực hiện hành vi và lưu trữ trạng thái.
+
+5. Tính chất thừa kế (Inheritance)
+Định nghĩa: Khi nào các class(KDL) có chung thuộc tính/phương thức thì mình 
+sẽ tạo KDL cha(class/interface/abstract class) chung để chứa các thuộc tính/phương thức chung đó
+để tăng khả năng reuse/clean code
+
+Thừa kế: thuộc tính, phương thức
+Override: phương thức
+
+6. Tính đa hình(polymorphism)
+Định nghĩa: Tính chất đa hình có 2 loại, đa hình trong phương thức và đa hình trong đối tượng
+Một phương thức, đối tượng có thời điểm, thời gian này nó là hình thái này, thời điểm thời gian
+khác nó là hình thái, chức năng khác
+
+6.1 Đa hình trong phương thức
++ Overloading
+  --> Hai hoặc nhiều phương thức được gọi là overloading nếu
+  . Thuộc cùng 1 class
+  . Cùng tên
+  . Số lượng tham số khác nhau || KDL truyền vào của tham số khác nhau
+
++ Overriding
+  --> Hai phương thức được gọi là overriding nếu
+  . Thuộc 2 classes cha con
+  . Hàm override là hàm nằm trong class con
+    override, định nghĩa lại nội dung của hàm cha
+  --> Override chỉ cho phép override method, không có khái niệm override attribute
+
+6.2 Đa hình trong đối tượng(liên quan đến thừa kế)
+Khi dùng đa hình trong đối tượng
++ Dễ dàng ép kiểu qua về giữa các biến trong phạm vi KDL cha con	
+
+7. Join SQL
+
 
