@@ -91,4 +91,57 @@ Khi dùng đa hình trong đối tượng
 
 7. Join SQL
 
+Giới thiệu bản thân
 
+Ưu điểm
+Nhược điểm
+
+Môn học yêu thích nhất
+
+Mục tiêu 3 năm nữa sẽ như thế nào
+
+Ngôn ngữ lập trình mạnh nhất
+
+Em thích chơi với kiểu bạn bè như thế nào
+
+KDL nguyên thủy và KDL tham chiếu
+
+Toán tử 3 ngôi
+
+Phân biệt && ||
+
+phạm vi truy cập tồn tại biến
+ -> biến static, biến trong hàm, biến trong tham số
+ -> biến toàn cục, cục bộ 
+
+cách debug
+
+String vs char
+ -> string immutable
+
+khi nào thì quăng ra nullpointer exception
+
+con trỏ
+
+validate email -> regex -> biểu thức chính quy?
+
+đọc file, ghi file -> exception 
+
+access modifier
+
+ default?
+ 
+constructor và method khác nhau? 
+
+constructor mặc định và constructor ko mặc định
+
+JavaBean là gì
+
+abstract và interface
+
+Phân biệt Upcasting và DownCasting
+ - Khi biến tham chiếu của lớp cha tham chiếu tới đối tượng của lớp con, thì đó là Upcasting.
+ - Downcasting là dạng chuyển kiểu chuyển 1 đối tượng là một thể hiện của lớp cha xuống thành 
+   đối tượng là thể hiện của lớp con trong quan hệ kế thừa.
+   
+   
